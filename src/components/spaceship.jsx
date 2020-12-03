@@ -24,7 +24,7 @@ class spaceship extends Component {
       // Access using component 
       componentDidMount() {
 
-            const swapiApiUrl = 'http://swapi.dev/api/' + this.state.type + '/';
+            const swapiApiUrl = 'https://swapi.dev/api/' + this.state.type + '/';
 
             fetch(swapiApiUrl, {
                   // Access parameters

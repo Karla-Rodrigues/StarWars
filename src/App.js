@@ -27,7 +27,7 @@ class App extends Component {
   // Access using component 
   componentDidMount() {
 
-    const swapiApiUrl = 'http://swapi.dev/api/' + this.state.type + '/?_limit=8';
+    const swapiApiUrl = 'https://swapi.dev/api/' + this.state.type + '/?_limit=8';
 
     fetch(swapiApiUrl)
 
