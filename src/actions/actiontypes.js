@@ -1,0 +1,6 @@
+export const LOAD1_PEOPLE = 'LOAD1_PEOPLE'
+export const LOADN_PEOPLE = 'LOADN_PEOPLE'
+export const LOAD_SHIPS = 'LOAD_SHIPS'
+export const LOAD_CHARACTER = 'LOAD_CHARACTER'
+export const LOAD_STARSHIP = 'LOAD_STARSHIP'
+export const LOAD_ERROR = 'LOAD_ERROR'

@@ -1,95 +1,68 @@
 import React, { Component } from 'react';
-import './App.css';
+import './index.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Banner from './components/banner';
-import Spaceship from './components/spaceship';
+import People from './components/people';
+import Ships from './components/ships';
 import Pagination from './components/pagination';
+import Character from './components/character';
+import Starship from './components/starship';
 import Footer from './components/footer';
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      type: 'people',
-      numPage: 1,
-      totalPages: 65,
-      list: [],
-    };
-  }
+      state = {
+            item: 0,
 
-  state = {
-    type: 'people',
-    numPage: 1,
-    totalPages: 65,
-    list: []
-  };
+      }
 
-  // Access using component 
-  componentDidMount() {
+      handleNext = () => {
+            let item = this.state.item;
+            item += 1;
+            this.setState({ item });
+      };
 
-    const swapiApiUrl = 'https://swapi.dev/api/' + this.state.type + '/?_limit=8';
+      handlePrevious = () => {
+            let item = this.state.item;
+            if (item > 0) {
+                  item -= 1;
+            }
+            this.setState({ item });
+      };
 
-    fetch(swapiApiUrl)
-
-      // Access with success, put the information in data
-      .then(function (data) {
-        return data.json();
-      })
-
-      // Format each data to the format array line to show
-      .then(function (d) {
-
-        let personArray = d.results.map((person) => {
-
-          let name = person.name;
-          let height = person.height;
-          let mass = person.mass
-          let birthYear = person.birth_year;
-
-          return (
-
-            <ul >
-              <li>
-                <h3> {name} </h3>
-                <p> <dark>Height:</dark> {height} </p>
-                <p> <dark>Mass:</dark> {mass} </p>
-                <p> <dark>Birth Year:</dark> {birthYear} </p>
-              </li>
-            </ul>
-
-          )
-
-        })
-
-        // Move the obtain information to the setState
-        this.setState({ list: personArray });
-      }.bind(this))
-  }
-
-  render() {
-    return (
-      <div className='App'>
-        <div className='container'>
-          <Banner />
-          <div className='list'>
-
-            {this.state.list[0]}
-            {this.state.list[1]}
-            {this.state.list[2]}
-            {this.state.list[3]}
-            {this.state.list[4]}
-            {this.state.list[5]}
-            {this.state.list[6]}
-            {this.state.list[7]}
-
-          </div>
-          <Spaceship />
-          <Pagination />
-          <Footer />
-        </div>
-      </div>
-    );
-  }
+      render() {
+            return (
+                  <Router>
+                        <div className='App'>
+                              <div className='container'>
+                                    <Route exact path={'/StarWars'} render={props => (
+                                          <React.Fragment>
+                                                <Banner />
+                                                <People item={this.state.item} />
+                                                <Ships item={this.state.item} />
+                                                <Pagination onNext={this.handleNext} onPrevious={this.handlePrevious} />
+                                                <Footer />
+                                          </React.Fragment>
+                                    )} />
+                                    <Route exact path={'/character/:id'} render={props => (
+                                          <React.Fragment>
+                                                <Banner />
+                                                <Character {...props} />
+                                                <Footer />
+                                          </React.Fragment>
+                                    )} />
+                                    <Route exact path={'/starship/:id'} render={props => (
+                                          <React.Fragment>
+                                                <Banner />
+                                                <Starship {...props} />
+                                                <Footer />
+                                          </React.Fragment>
+                                    )} />
+                              </div>
+                        </div>
+                  </Router>
+            );
+      }
 }
 
 export default App;

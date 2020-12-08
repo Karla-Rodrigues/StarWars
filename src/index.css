@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap');
+@import url('react-loader-spinner/dist/loader/css/react-spinner-loader.css');
 
 :root{
   font-size: 16px;
@@ -10,20 +11,44 @@
   :root{
     font-size: 5px;
   }
+  .list ul {
+    direction: column;
+  }
+  .list li {
+    height: 100px;
+  }
 }
 @media (min-width: 780px) {
   :root{
     font-size: 9px;
+  }
+  .list ul {
+    direction: column;
+  }
+  .list li {
+    height: 80px;
   }
 }
 @media (min-width: 990px) {
   :root{
     font-size: 12px;
   }
+  .list ul {
+    direction: row;
+  }
+  .list li {
+    height: 48px;
+  }
 }
 @media (min-width: 1200px) {
   :root{
     font-size: 16px;
+  }
+  .list ul {
+    direction: row;
+  }
+  .list li {
+    height: 48px;
   }
 }  
 
@@ -46,13 +71,13 @@ body{
 }
 
 .container {
-  padding: 0 1rem;
-  
+  background-color: #222222;
+  padding: 0 !important;  
 }
 
 .banner {
   position: relative;
-  background-color: #222222;
+  background-color: #000000;
   height: 2rem;
   width:100%;
   padding: 2.5rem 0 2.5rem 0;
@@ -73,10 +98,9 @@ body{
   color:#fff;
   font-weight: bold;
   text-align: left;
-  font-size: 1.5rem;
-  padding-top: 0.20rem;
+  font-size: 20px;
+  padding: 10px 10px 5px 10px;
   margin: 0;
-  text-decoration: none;
 }
 
 .link-style:hover {
@@ -84,14 +108,29 @@ body{
   text-decoration: none;
 }
 
+.link-style2 {
+  color:#000000;
+  font-weight: bold;
+  text-align: left;
+  font-size: 20px;
+  padding: 10px 10px 5px 10px;
+  margin: 0;
+}
+
+.link-style2:hover {
+  color:#F7E018;
+  text-decoration: none;
+}
+
 .pageButton {
   width: 40px;
   height: 36px;
-  padding: 0;
+  padding: 0 1rem;
   text-align: center;
-  color: #fff;
+  color: #F7E018;
   cursor: pointer;
   font-size: 30px;
+  border-radius: 50%;
 }
 
 /* List */
@@ -100,83 +139,82 @@ body{
   margin: 0;
   padding: 0;
   float:center;
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
 }
     
 .list li {
   box-shadow: 1px 2px 0 0 #A2A2A2;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 0.5em;
   margin: 0 4px;
-  height: 128px;
-  width: 268px; 
+  width: 68rem; 
   margin-bottom: 0.5em;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .list h3 {
   color:#fff;
   font-weight: bold;
   text-align: left;
-  font-size: 24px;
-  padding-top: 0.20rem;
+  font-size: 20px;
+  padding: 10px 10px 5px 10px;
   margin: 0;
 }
 
-.list p {
-  color:#fff;
-  text-align: left;
+.list h4 {
+  color:#A2A2A2;
+  font-weight: bold;
+  text-align: right;
   font-size: 16px;
+  padding: 20px 10px 5px 10px;
   margin: 0;
 }
 
-/* Spaceship */
-.ship ul {
-  list-style-type: none;
+.list i {
+  color:#fff;
+  text-align: left;
+  font-size: 24px;
+  padding: 0 10px;
   margin: 0;
-  padding: 0;
+}
+
+/* Card */
+.gray-box{ 
+  background-color: #A2A2A2;
+  color: #000000;
+  box-shadow: 0 4px 17px #000000;
+  border-radius: 5px;
+  margin:0.35rem;
+  padding:0.35rem;
   float:center;
-  display: inline-flex;
-  flex-wrap: wrap;
-}
-    
-.ship li {
-  box-shadow: 1px 2px 0 0 #A2A2A2;
-  border-radius: 10px;
-  padding: 0.5em;
-  margin: 0 4px;
-  height: 8rem;
-  width: 68rem; 
-  margin-bottom: 0.5em;
-  display: flex;
-  flex-direction: column;
+  min-width: 250px;
 }
 
-.ship h3 {
-  color:#fff;
+.box{
+  margin:0.35rem;
+  padding:0.35rem;
+  min-width: 250px;
+}
+
+.box h3 {
+  padding: 1rem 1rem 0 1rem;
   font-weight: bold;
+  text-transform: uppercase;
   text-align: left;
-  font-size: 1.5rem;
-  padding-top: 0.20rem;
-  margin: 0;
+  font-size: 20px;
 }
 
-.ship p {
-  color:#fff;
-  font-weight: bold;
+.box h4 {
+  padding: 1.25rem 1rem 0 1rem;
+  font-weight: bolder;
   text-align: left;
-  font-size: 1rem;
-  margin: 0;
-}
-
-dark {
-  color: #A2A2A2;
+  font-size: 20px;
 }
 
 .footer {
-  background-color: #222222;
+  background-color: #000000;
   padding: 5px 0 5px 0;
   margin: 5px 0 5px 0;
   position: relative;
@@ -204,7 +242,7 @@ li {
 li a {
   text-align: center;
   color: #ccc;
-  font-size: 1rem;
+  font-size: 16px;
 }
 li a:hover {
   opacity: 0.75;
