@@ -26,7 +26,7 @@ class Character extends Component {
 
             return (
                   <div className='gray-box'>
-                        <div className='gray-box'>
+                        <div className='box'>
                               <i class="far fa-user fa-2x"></i>
                               <h3> {character[0]} </h3>
                               <h4> Height: {character[1]} </h4>
@@ -36,7 +36,7 @@ class Character extends Component {
                               <h4> Eye Color: {character[5]} </h4>
                               <h4> Birth Year: {character[6]} </h4>
                               <h4> Gender: {character[7]} </h4>
-                              <Link className="link-style2" to='/StarWars'>
+                              <Link className="link-style" to='/StarWars'>
                                     <i class="fas fa-reply"></i>
                               </Link>
                         </div>

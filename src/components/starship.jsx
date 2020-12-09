@@ -26,12 +26,12 @@ class Starship extends Component {
 
             return (
                   <div className='gray-box'>
-                        <div className='gray-box'>
+                        <div className='box'>
                               <i class="far fa-star fa-2x"></i>
                               <h3> {starship[0]} </h3>
                               <h4> Model: {starship[1]} </h4>
                               <h4> Class: {starship[2]} </h4>
-                              <Link className="link-style2" to='/StarWars'>
+                              <Link className="link-style" to='/StarWars'>
                                     <i class="fas fa-reply"></i>
                               </Link>
                         </div>

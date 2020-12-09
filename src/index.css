@@ -15,7 +15,8 @@
     direction: column;
   }
   .list li {
-    height: 100px;
+    flex-direction: column;
+    
   }
 }
 @media (min-width: 780px) {
@@ -26,7 +27,7 @@
     direction: column;
   }
   .list li {
-    height: 80px;
+    flex-direction: row;
   }
 }
 @media (min-width: 990px) {
@@ -37,7 +38,7 @@
     direction: row;
   }
   .list li {
-    height: 48px;
+    flex-direction: row;
   }
 }
 @media (min-width: 1200px) {
@@ -48,7 +49,7 @@
     direction: row;
   }
   .list li {
-    height: 48px;
+    flex-direction: row;
   }
 }  
 
@@ -108,20 +109,6 @@ body{
   text-decoration: none;
 }
 
-.link-style2 {
-  color:#000000;
-  font-weight: bold;
-  text-align: left;
-  font-size: 20px;
-  padding: 10px 10px 5px 10px;
-  margin: 0;
-}
-
-.link-style2:hover {
-  color:#F7E018;
-  text-decoration: none;
-}
-
 .pageButton {
   width: 40px;
   height: 36px;
@@ -136,30 +123,33 @@ body{
 /* List */
 .list ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   float:center;
+  align-content: center;
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 }
     
 .list li {
-  box-shadow: 1px 2px 0 0 #A2A2A2;
+  background-color: #333333;
+  box-shadow: 0 4px 17px #000000;
   border-radius: 5px;
   padding: 0.5em;
-  margin: 0 4px;
-  width: 68rem; 
-  margin-bottom: 0.5em;
+  margin: 0 50px 10px 70px;
+  height: fit-content;
+  width: 65rem; 
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  align-content: stretch;
 }
-
 .list h3 {
   color:#fff;
   font-weight: bold;
   text-align: left;
   font-size: 20px;
-  padding: 10px 10px 5px 10px;
+  padding: 0 20px 0 0;
   margin: 0;
 }
 
@@ -168,7 +158,7 @@ body{
   font-weight: bold;
   text-align: right;
   font-size: 16px;
-  padding: 20px 10px 5px 10px;
+  padding: 0 10px;
   margin: 0;
 }
 
@@ -176,14 +166,14 @@ body{
   color:#fff;
   text-align: left;
   font-size: 24px;
-  padding: 0 10px;
+  padding: 0;
   margin: 0;
 }
 
 /* Card */
 .gray-box{ 
-  background-color: #A2A2A2;
-  color: #000000;
+  background-color: #333333;
+  color: #fff;
   box-shadow: 0 4px 17px #000000;
   border-radius: 5px;
   margin:0.35rem;
@@ -193,24 +183,32 @@ body{
 }
 
 .box{
+  background-color: #333333;
+  color: #fff;
+  box-shadow: 0 4px 17px #000000;
+  border-radius: 5px;
   margin:0.35rem;
   padding:0.35rem;
+  float:center;
   min-width: 250px;
 }
 
 .box h3 {
   padding: 1rem 1rem 0 1rem;
-  font-weight: bold;
+  font-weight: bolder;
   text-transform: uppercase;
-  text-align: left;
-  font-size: 20px;
+  
+  font-size: 25px;
 }
 
 .box h4 {
-  padding: 1.25rem 1rem 0 1rem;
-  font-weight: bolder;
-  text-align: left;
+  padding: 0.5rem 1rem;
   font-size: 20px;
+}
+
+.box i {
+  padding: 0.5rem 1rem;
+  font-size: 40px;
 }
 
 .footer {

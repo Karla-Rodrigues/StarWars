@@ -40,8 +40,6 @@ function fetchPeople(page) {
 
                               });
 
-                              console.log(d.next.substring(34));
-
                               return onSuccess(page, peopleArray);
                         })
                         // Error
