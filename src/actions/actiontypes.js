@@ -1,4 +1,4 @@
-export const LOAD_PEOPLE = 'LOADN_PEOPLE'
+export const LOAD_PEOPLE = 'LOAD_PEOPLE'
 export const LOAD_SHIPS = 'LOAD_SHIPS'
 export const LOAD_CHARACTER = 'LOAD_CHARACTER'
 export const LOAD_STARSHIP = 'LOAD_STARSHIP'
