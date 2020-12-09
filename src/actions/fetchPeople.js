@@ -3,15 +3,14 @@ import { loadError } from './index';
 
 function fetchPeople(page) {
 
-      return async dispatch => {
+      return dispatch => {
 
-            function onSuccess(page, peopleArray) {
-                  dispatch(loadPeople(page, peopleArray));
+            function onSuccess(peopleArray) {
+                  dispatch(loadPeople(peopleArray));
                   return peopleArray;
             }
 
             function onError(error) {
-
                   dispatch(loadError(error));
                   return error;
             }
@@ -40,7 +39,7 @@ function fetchPeople(page) {
 
                               });
 
-                              return onSuccess(page, peopleArray);
+                              return onSuccess(peopleArray);
                         })
                         // Error
                         .catch(error => {

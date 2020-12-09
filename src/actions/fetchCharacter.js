@@ -3,7 +3,7 @@ import { loadError } from './index';
 
 function fetchCharacter(id) {
 
-      return async dispatch => {
+      return dispatch => {
 
             function onSuccess(characterArray) {
                   dispatch(loadCharacter(characterArray));
@@ -17,7 +17,7 @@ function fetchCharacter(id) {
 
             try {
 
-                  await fetch('https://swapi.dev/api/people/' + id)
+                  fetch('https://swapi.dev/api/people/' + id)
 
                         // Access with success, put the information in data
                         .then(data => data.json())

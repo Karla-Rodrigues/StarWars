@@ -1,5 +1,4 @@
-import { LOADN_PEOPLE } from '../actions/actiontypes';
-import { LOAD1_PEOPLE } from '../actions/actiontypes';
+import { LOAD_PEOPLE } from '../actions/actiontypes';
 import { LOAD_SHIPS } from '../actions/actiontypes';
 import { LOAD_CHARACTER } from '../actions/actiontypes';
 import { LOAD_STARSHIP } from '../actions/actiontypes';
@@ -13,15 +12,17 @@ const initialState = {
 function SwapiReducer(state = initialState, action) {
 
       switch (action.type) {
-            case LOAD1_PEOPLE:
-                  return {
-                        ...state,
-                        people: action.people
-                  }
-            case LOADN_PEOPLE:
-                  return {
-                        ...state,
-                        people: [...state.people, ...action.people]
+            case LOAD_PEOPLE:
+                  if (state.people == null) {
+                        return {
+                              ...state,
+                              people: action.people
+                        }
+                  } else {
+                        return {
+                              ...state,
+                              people: [...state.people, ...action.people]
+                        }
                   }
             case LOAD_SHIPS:
                   return {

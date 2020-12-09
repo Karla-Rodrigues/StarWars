@@ -13,7 +13,7 @@ class Pagination extends Component {
                                     <i class="fas fa-chevron-circle-left"></i>
                               </span>}
 
-                        {item !== 11 &&
+                        {item !== 9 &&
                               <span onClick={() => onNext()} className="pageButton">
                                     <i class="fas fa-chevron-circle-right"></i>
                               </span>}

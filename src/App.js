@@ -40,7 +40,7 @@ class App extends Component {
                                                 <Banner />
                                                 <People item={this.state.item} />
                                                 <Ships item={this.state.item} />
-                                                <Pagination onNext={this.handleNext} onPrevious={this.handlePrevious} />
+                                                <Pagination item={this.state.item} onNext={this.handleNext} onPrevious={this.handlePrevious} />
                                                 <Footer />
                                           </React.Fragment>
                                     )} />

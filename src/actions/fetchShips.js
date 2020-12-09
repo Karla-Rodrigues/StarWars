@@ -3,7 +3,7 @@ import { loadError } from './index';
 
 function fetchShips() {
 
-      return async dispatch => {
+      return dispatch => {
 
             function onSuccess(shipsArray) {
                   dispatch(loadShips(shipsArray));
@@ -16,7 +16,7 @@ function fetchShips() {
             }
 
             try {
-                  await fetch('https://swapi.dev/api/starships/')
+                  fetch('https://swapi.dev/api/starships/')
 
                         // Access with success, put the information in data
                         .then(data => data.json())
