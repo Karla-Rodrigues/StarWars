@@ -27,3 +27,9 @@ The application uses:
 - react-loader-spinner
 - fonts.googleapis.com: Jura
 - CSS for react-loader-spinner
+
+** To improve **
+
+1 - a secure Loop in the access to API with automatic control of pages (it's forced code at the moment);
+2 - a better error control in the Redux information
+ 
