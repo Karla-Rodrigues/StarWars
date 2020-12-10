@@ -10,14 +10,14 @@ function fetchCharacter(id) {
                   return characterArray;
             }
 
-            function onError(error) {
-                  dispatch(loadError(error));
+            function onError(module_name, access_data, error) {
+                  dispatch(loadError(module_name, access_data, error));
                   return error;
             }
 
             try {
 
-                  fetch('https://swapi.dev/api/people/' + id)
+                  fetch('//swapi.dev/api/people/' + id)
 
                         // Access with success, put the information in data
                         .then(data => data.json())
@@ -41,12 +41,14 @@ function fetchCharacter(id) {
                         })
                         // Error
                         .catch(error => {
-                              onError(error);
+                              console.log(error);
+                              onError('CHARACTER', id, error);
                         })
             }
 
             catch (error) {
-                  return onError(error);
+                  console.log(error);
+                  return onError('CHARACTER', id, error);
             }
       }
 }

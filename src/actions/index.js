@@ -33,9 +33,11 @@ export function loadStarship(starship) {
     }
 }
 
-export function loadError(error) {
+export function loadError(module_name, access_data, error) {
     return {
         type: LOAD_ERROR,
+        module_name: module_name,
+        access_data: access_data,
         error: error
     }
 }

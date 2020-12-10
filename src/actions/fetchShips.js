@@ -10,13 +10,13 @@ function fetchShips() {
                   return shipsArray;
             }
 
-            function onError(error) {
-                  dispatch(loadError(error));
+            function onError(module_name, access_data, error) {
+                  dispatch(loadError(module_name, access_data, error));
                   return error;
             }
 
             try {
-                  fetch('https://swapi.dev/api/starships/')
+                  fetch('//swapi.dev/api/starships/')
 
                         // Access with success, put the information in data
                         .then(data => data.json())
@@ -41,12 +41,12 @@ function fetchShips() {
                         })
                         // Error
                         .catch(error => {
-                              onError(error);
+                              onError('SHIPS', '', error);
                         })
             }
 
             catch (error) {
-                  return onError(error);
+                  return onError('SHIPS', '', error);
             }
       }
 }

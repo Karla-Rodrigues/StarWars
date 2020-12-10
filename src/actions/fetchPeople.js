@@ -10,14 +10,14 @@ function fetchPeople(page) {
                   return peopleArray;
             }
 
-            function onError(error) {
-                  dispatch(loadError(error));
+            function onError(module_name, access_data, error) {
+                  dispatch(loadError(module_name, access_data, error));
                   return error;
             }
 
             try {
 
-                  fetch('https://swapi.dev/api/people/?page=' + page)
+                  fetch('//swapi.dev/api/people/?page=' + page)
 
                         // Access with success, put the information in data
                         .then(data => data.json())
@@ -43,12 +43,12 @@ function fetchPeople(page) {
                         })
                         // Error
                         .catch(error => {
-                              onError(error);
+                              onError('PEOPLE', page, error);
                         })
             }
 
             catch (error) {
-                  return onError(error);
+                  return onError('PEOPLE', page, error);
             }
       }
 }

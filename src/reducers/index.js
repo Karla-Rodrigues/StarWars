@@ -42,6 +42,8 @@ function SwapiReducer(state = initialState, action) {
             case LOAD_ERROR:
                   return {
                         ...state,
+                        module_name: action.module_name,
+                        access_data: action.access_data,
                         error: action.error
                   }
             default:
